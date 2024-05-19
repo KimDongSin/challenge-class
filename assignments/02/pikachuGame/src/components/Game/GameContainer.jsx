@@ -3,6 +3,8 @@ import char from "./../../assets/pikachu.png";
 
 function GameContainer() {
   const [position, setPosition] = useState({ top: 0, left: 0 });
+  const [charFlip, setCharFlip] = useState(true);
+  const [jumping, setJumping] = useState(false);
   const charRef = useRef(null);
 
   const handleKeydown = (e) => {
@@ -25,11 +27,19 @@ function GameContainer() {
       case "ArrowLeft":
         if (leftVal >= 50) {
           setPosition((prev) => ({ ...prev, left: prev.left - 50 }));
+          setCharFlip(false);
         }
         break;
       case "ArrowRight":
         if (leftVal < 450) {
           setPosition((prev) => ({ ...prev, left: prev.left + 50 }));
+          setCharFlip(true);
+        }
+        break;
+      case " ": // 점프 0.5초 애니메이션
+        if (!jumping) {
+          setJumping(true);
+          setTimeout(() => setJumping(false), 500);
         }
         break;
       default:
@@ -42,13 +52,15 @@ function GameContainer() {
     return () => {
       window.removeEventListener("keydown", handleKeydown);
     };
-  }, []);
+  }, [jumping]);
 
   return (
     <main>
       <div className="bg__container">
         <img
-          className="game__char"
+          className={`game__char ${charFlip ? "" : "flip"} ${
+            jumping ? "jump" : ""
+          }`}
           ref={charRef}
           src={char}
           alt="피카츄"

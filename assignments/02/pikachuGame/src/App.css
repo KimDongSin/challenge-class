@@ -20,3 +20,23 @@ main {
   height: 50px;
   transition: 0.3s;
 }
+
+.flip {
+  transform: scaleX(-1);
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.jump {
+  animation: jump 0.5s ease-in-out;
+}
