@@ -38,7 +38,7 @@ function GameContainer() {
   };
 
   useEffect(() => {
-    document.addEventListener("keydown", handleKeydown);
+    window.addEventListener("keydown", handleKeydown);
     return () => {
       window.removeEventListener("keydown", handleKeydown);
     };
