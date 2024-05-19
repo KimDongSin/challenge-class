@@ -1,0 +1,22 @@
+main {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.bg__container {
+  background-image: url("./assets/grass.png");
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.game__char {
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+}
