@@ -60,8 +60,7 @@ function GameContainer() {
         break;
     }
   };
-  
-  // 키입력 여러번 먹히는 것 방지
+
   useEffect(() => {
     window.addEventListener("keydown", handleKeydown);
     window.addEventListener("keyup", handleKeyup);
