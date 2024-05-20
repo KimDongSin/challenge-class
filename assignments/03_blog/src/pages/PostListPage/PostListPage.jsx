@@ -1,5 +1,11 @@
+import DefaultLayout from "../../layouts/DefaultLayout";
+
 function PostListPage() {
-  return <div>PostListPage</div>;
+  return (
+    <DefaultLayout>
+      <h1>PostListPage</h1>
+    </DefaultLayout>
+  );
 }
 
 export default PostListPage;
