@@ -1,18 +1,20 @@
-import { Link, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
+import HomePage from "../pages/HomePage";
+import PostDetailPage from "../pages/PostDetailPage";
+import PostListPage from "../pages/PostListPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <h1>Hello World</h1>
-        <Link to="about">About Us</Link>
-      </div>
-    ),
+    element: <HomePage />,
   },
   {
-    path: "about",
-    element: <div>About</div>,
+    path: "/posts",
+    element: <PostListPage />,
+  },
+  {
+    path: "/posts/:postId", // 동적라우터 이름은 명시적으로.
+    element: <PostDetailPage />,
   },
 ]);
 
