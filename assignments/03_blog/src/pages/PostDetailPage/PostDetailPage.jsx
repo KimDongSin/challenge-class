@@ -1,15 +1,15 @@
-import { useParams } from "react-router-dom";
-import DefaultLayout from "../../layouts/DefaultLayout";
+import { useLoaderData } from "react-router-dom";
 
 function PostDetailPage() {
-  const params = useParams();
-
-  console.log(params);
+  const post = useLoaderData();
 
   return (
-    <DefaultLayout>
+    <div>
       <h1>PostDetailPage</h1>
-    </DefaultLayout>
+
+      <p>{post.title}</p>
+      <p>{post.body}</p>
+    </div>
   );
 }
 

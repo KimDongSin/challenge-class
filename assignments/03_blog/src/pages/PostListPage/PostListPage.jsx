@@ -1,10 +1,19 @@
-import DefaultLayout from "../../layouts/DefaultLayout";
+import { Link, useLoaderData } from "react-router-dom";
 
 function PostListPage() {
+  const posts = useLoaderData();
   return (
-    <DefaultLayout>
+    <div>
       <h1>PostListPage</h1>
-    </DefaultLayout>
+
+      <ol>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <Link to={`/posts/${post.id}`}>{post.title}</Link>
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
 

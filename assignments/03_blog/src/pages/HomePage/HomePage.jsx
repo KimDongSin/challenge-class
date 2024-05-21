@@ -1,11 +1,5 @@
-import DefaultLayout from "../../layouts/DefaultLayout";
-
 function HomePage() {
-  return (
-    <DefaultLayout>
-      <h1>HomePage</h1>
-    </DefaultLayout>
-  );
+  return <h1>HomePage</h1>;
 }
 
 export default HomePage;
